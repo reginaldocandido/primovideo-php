@@ -1,0 +1,19 @@
+CREATE VIEW view_filmes_info AS
+SELECT 
+    f.id AS id,
+    f.titulo AS titulo,
+    f.sinopse AS sinopse,
+    f.ano AS ano,
+    f.tempo AS tempo,
+    f.imdb AS imdb,
+    f.imagem AS imagem,
+    c.classificacao AS classificacao,
+    GROUP_CONCAT(cat.categoria SEPARATOR ', ') AS categorias,
+    f.youtube AS youtube
+FROM 
+    filmes f
+    LEFT JOIN classificacoes c ON f.fk_classificacao_id = c.id
+    LEFT JOIN filmes_categorias fc ON f.id = fc.fk_filme_id
+    LEFT JOIN categorias cat ON fc.fk_categoria_id = cat.id
+GROUP BY 
+    f.id, f.titulo, f.sinopse, f.ano, f.tempo, f.imdb, f.imagem, c.classificacao, f.youtube;

@@ -1,0 +1,22 @@
+.btn{
+    background-color: #164b45;
+    color: aliceblue;
+}
+
+
+.recortarimg {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    border: 5px solid #164b45;
+    border-radius: 10px;
+}
+
+.recortarimg img {
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+}
+.titulo{
+    background-color: #164b45;
+    color: aliceblue;
+}
